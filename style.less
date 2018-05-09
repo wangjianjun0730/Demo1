@@ -1,0 +1,168 @@
+@import "../../../css/commonStyles.less";
+@primaryBtnColor: #3a87f8;
+#docModalWrap {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 2500;
+}
+#docModalWrap.none {
+  display: none;
+}
+
+/**
+ 只含内容样式
+*/
+.Modal{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .3);
+  }
+
+  .showBgAnimation{
+    animation: showBgAnimation;
+    animation-duration: 0.5s;
+    -webkit-animation: showBgAnimation;
+    -webkit-animation-duration: 0.5s;
+  }
+  .hideBgAnimation{
+    animation: hideBgAnimation;
+    animation-duration: 0.5s;
+    -webkit-animation: hideBgAnimation;
+    -webkit-animation-duration: 0.5s;
+  }
+
+  .modal-container {
+    overflow:hidden;
+    display: block;
+    position: absolute;
+    overflow-x: hidden;
+    background: rgba(255,255,255,0);
+    border-top-right-radius: @12px;
+    border-top-left-radius: @12px;
+    bottom: 0;
+    width: @339px;
+    text-align: center;
+    min-height: 178px;
+    font-size: 16px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    .modal-title{
+      width: 100%;
+      height: 56px;
+      background-color: #FFFFFF;
+    }
+    .middle-hollow-container{
+      position: relative;
+      background-color: #Fff;
+      height: 20px;
+      margin-left: 10px;
+      margin-right: 10px;
+
+      .middle-line{
+        height: 10px;
+        border-bottom: 0.3vw dashed #cccccc;
+        width: 100%;
+      }
+
+      .dot-line-left{
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-color: rgba(255,255,255,0);
+        position: absolute;
+        left: -30px;
+        top: -10px;
+        border-radius: 50%;
+        overflow: visible;
+        border: 10px solid #FF6D00;
+      }
+
+      .dot-line-right{
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-color: rgba(255,255,255,0);
+        position: absolute;
+        right: -30px;
+        top: -10px;
+        border-radius: 50%;
+        overflow: visible;
+        border: 10px solid #FF6D00;;
+      }
+    }
+    .modal-body{
+      width: 100%;
+      position: absolute;
+      top: 76px;
+      bottom: 0;
+      background-color: #FFF;
+      height: 100%;
+    }
+  }
+
+  .showListAnimation{
+    animation: showListAnimation;
+    animation-duration: 0.5s;
+    -webkit-animation: showListAnimation;
+    -webkit-animation-duration: 0.5s;
+
+  }
+  .hideListAnimation{
+    animation: hideListAnimation;
+    animation-duration: 0.5s;
+    -webkit-animation: hideListAnimation;
+    -webkit-animation-duration: 0.5s;
+  }
+}
+
+
+@keyframes showListAnimation {
+  0%{transform: translateY(100%)}
+  100%{transform: translateY(0%)}
+}
+
+@keyframes hideListAnimation {
+  0%{transform: translateY(0%)}
+  100%{transform: translateY(100%)}
+}
+
+@-webkit-keyframes showListAnimation {
+  0%{transform: translateY(100%)}
+  100%{transform: translateY(0%)}
+}
+
+@-webkit-keyframes hideListAnimation {
+  0%{transform: translateY(0%)}
+  100%{transform: translateY(100%)}
+}
+
+@keyframes showBgAnimation {
+  0%{background-color: rgba(0,0,0,0)}
+  100%{background-color: rgba(0,0,0,0.3)}
+}
+
+@-webkit-keyframes showBgAnimation {
+  0%{background-color: rgba(0,0,0,0)}
+  100%{background-color: rgba(0,0,0,0.3)}
+}
+@keyframes hideBgAnimation {
+  0%{background-color: rgba(0,0,0,0.3)}
+  100%{background-color: rgba(0,0,0,0)}
+}
+
+@-webkit-keyframes hideBgAnimation {
+  0%{background-color: rgba(0,0,0,0.3)}
+  100%{background-color: rgba(0,0,0,0)}
+}
+
